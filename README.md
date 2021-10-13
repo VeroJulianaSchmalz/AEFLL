@@ -92,9 +92,13 @@ The goal of the model is classifying the original language learners' texts into 
 The obtained results across the three different languages proved the efficiency of our system in identifying the CEFR levels of the learners' texts, reaching a major accuracy of 92,2%. However, due to the larger amount of data available for English, in that language we were able to obtain the most outstanding results. The use of an automatic system by which to systematically correct learners' exams and detect errors would seem to improve the performance of our automatic system to some extent. Especially with regard to oral examinations, we found a possible _bias effect_ in the assessment of competences. Nevertheless, several questions remain open in this regard, clarifiable perhaps with more data across different levels of competence. Also in the case of Italian and German, there are possible improvements reachable with a larger amount of texts. 
 
 
+## Citation 
 
+If you find this repository/thesis work useful, please cite it as follows: 
 
+Schmalz, Veronica J. (2020) AEFLL: Automatic Evaluation of Foreign Language Learning. An interdisciplinary project for English, Italian and German at the Free University of Bozen-Bolzano. https://github.com/VeroJulianaSchmalz/AEFLL 
 
+In case of questions or information requests, you can write to veronicajuliana.schmalz@kuleuven.be
 
 
 [^1]: https://philarion.mml.cam.ac.uk/ 

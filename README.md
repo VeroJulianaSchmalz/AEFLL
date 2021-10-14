@@ -1,8 +1,8 @@
 # AEFLL (Automatic Evaluation of Foreign Language Learning): _An interdisciplinary project for English, Italian and German at the Free University of Bozen-Bolzano_ 
 
 
-This repository contains a master's thesis study focused on the **automatic assessment of written and oral language competences** of _adult_ learners of _English, German, and Italian_ using **BERT models** (available at https://huggingface.co/transformers/pretrained_models.html). Given the exponential growth of the latter worldwide and the increasing adoption of computer-assisted language examinations, these automated systems could facilitate the _objective_ scrutiny of numerous tests, _reducing the biases_ of human evaluators while providing cross-validly efficient and detailed assessments. We combine analysis and assessment methods within machine learning, natural language processing, language acquisition and development to correct and classify both written and oral examinations of adult language learners following the principles of the Common European Framework of Competence. 
-For our analysis we use written open-source datasets of English proficiency tests, namely EFCAMDAT[^1] and CLC-FCE[^2], and MERLIN[^3] for Italian and German. To train our models (see Training below), we conduct different experiments alternatively using the original written texts from the students, human corrections, when available, and the automatic corrections provided by LanguageTool (https://github.com/languagetool-org/languagetool), a computerized language checker tool. In this way the BERT model provides an embedding representation that not only describes the text content but at times also accounts for rule violations and other errors. A multi-layer perceptron is then used to map the embedding text representation into the related CEFR levels. We evaluate the performance of our architecture on each dataset training a language specific model, achieving extremely high proficiency prediction in all cases. In addition, we received a narrow dataset of oral examinations for B2 English exams from the Free University of Bozen's Language Centre[^4] on which we conduct a separate case study. We applied the pretrained English models on the oral exams, previously transcribed using an automatic speech recognition engine. Finally, we consider linguistic aspects related to the written and spoken language of the learners of different languages and possible features to be added to the models to possibly improve their performance.
+This repository contains a master's thesis research focused on the **automatic assessment of written and oral language competences** of _adult_ learners of _English, German, and Italian_ using **BERT models** (available at https://huggingface.co/transformers/pretrained_models.html). Given the exponential growth of the latter worldwide and the increasing adoption of computer-assisted language examinations, these automated systems could facilitate the _objective_ scrutiny of numerous tests, _reducing the biases_ of human evaluators while providing cross-validly efficient and detailed assessments. We combine analysis and assessment methods within machine learning, natural language processing, language acquisition and development to correct and classify both written and oral examinations of adult language learners following the principles of the Common European Framework of Competence. 
+For our analysis we use written open-source datasets of English proficiency tests, namely EFCAMDAT[^1] and CLC-FCE[^2], and MERLIN[^3] for Italian and German. To train our models (see BERT-based model below), we conduct different experiments alternatively using the original written texts from the learners, human corrections, when available, and the automatic corrections provided by LanguageTool (https://github.com/languagetool-org/languagetool), a computerized language checker tool. In this way, BERT provides an embedding representation that not only describes the text content but, at times, also accounts for rule violations and other errors. A multi-layer perceptron is then used to map the embedding text representation into the related CEFR levels. We evaluate the performance of our architecture on each dataset training a language specific model, achieving extremely high proficiency prediction in all cases. In addition, we received a narrow dataset of oral examinations for B2 English exams from the Free University of Bozen's Language Centre[^4] on which we conduct a separate case study. We apply the pretrained English models on the oral exams, previously transcribed using an automatic speech recognition engine. Finally, we consider linguistic aspects related to the written and spoken language of the learners of different languages and possible features to be added to the models to eventually improve their performance.
 
 ## Datasets 
 
@@ -42,14 +42,14 @@ tool.correct(text)
 
 ## Initial errors and levels analysis
 
-Before adopting the BERT-base model, we also considered and compared the amount and type of errors found by human and the automatic tool. 
+Before adopting the BERT-base model, we also considered and compared the amount and type of errors found by human examiners and the automatic tool. 
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/72256200/136711936-23042b76-95b6-4642-88ba-1d7162c1ab27.png">
 </p>
 
 <h5 align="center">
-Comparing errors' quantities across levels and correction modalities in EFCAMDAT</h5>
+Comparing errors' quantities across levels and correction modalities in EFCAMDAT (cf. Fig. 14 pag.33) </h5>
 
 
 
@@ -58,7 +58,7 @@ Comparing errors' quantities across levels and correction modalities in EFCAMDAT
 </p>
 
 <h5 align="center">
-Comparing error types across different levels of the EFCAMDAT corpus</h5>
+Comparing error types across different levels of the EFCAMDAT corpus (cf. Fig. 15 pag.34) </h5>
 
 
 
@@ -81,6 +81,8 @@ For our experiments in multi-class classification we used a pre-trained model, _
   <img src="https://user-images.githubusercontent.com/72256200/136712498-80d54851-2fb3-4dc7-b0a9-a5c5d11dc56a.png">
 </p>
 
+<h5 align="center">
+BERT-based model with only original students’ texts (left) vs original students’ texts and human/automatic corrections (right) employed in our multi-class classification task (cf. Fig. 10 pag.25) </h5>
 
 
 
@@ -89,7 +91,7 @@ The goal of the model is classifying the original language learners' texts into 
 
 ## Results 
 
-The obtained results across the three different languages proved the efficiency of our system in identifying the CEFR levels of the learners' texts, reaching a major accuracy of 92,2%. However, due to the larger amount of data available for English, in that language we were able to obtain the most outstanding results. The use of an automatic system by which to systematically correct learners' exams and detect errors would seem to improve the performance of our automatic system to some extent. Especially with regard to oral examinations, we found a possible _bias effect_ in the assessment of competences. Nevertheless, several questions remain open in this regard, clarifiable perhaps with more data across different levels of competence. Also in the case of Italian and German, there are possible improvements reachable with a larger amount of texts. 
+The obtained results across the three different languages proved the efficiency of our system in identifying the CEFR levels of the learners' texts, reaching a major accuracy of 92,2%. However, due to the larger amount of data available for English, in that language we were able to obtain the most relevant outcomes. The use of an automatic system by which to systematically correct learners' exams and detect errors would seem to improve the performance of our automatic system to some extent. Especially with regard to oral examinations, we found a possible _bias effect_ in the assessment of competences. Nevertheless, several questions remain open in this regard, clarifiable perhaps with more data across different levels of competence. Also in the case of Italian and German, there are possible improvements reachable with a larger amount of texts. 
 
 
 ## Citation 
